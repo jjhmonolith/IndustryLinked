@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1일차 7차시 · AI 챗봇의 교실 안전장치 만들기</title>
+<link rel="stylesheet" href="assets/slides.css">
+</head>
+<body>
+<div class="stage"><div class="deck">
+
+  <!-- 1 표지 -->
+  <section class="slide slide--cover is-active" data-kicker="1일차 · 7차시 · 17:30–19:00 (1.5h)">
+    <h1>AI 챗봇의 교실 안전장치 만들기</h1>
+    <p class="lead">똑똑한 챗봇을, 학생 앞에 내놓을 수 있는 챗봇으로</p>
+    <div class="meta">
+      <span>공통 · 전 참가자</span>
+      <span>강사 이창환 · 팀모노리스 CTO</span>
+      <span>도구 Colab · Solar API</span>
+    </div>
+    <aside class="notes"><b>오프닝:</b> 1일차 마지막 차시. 지금까지 '똑똑한 챗봇'을 만들었다면, 오늘은 학생 앞에 내놓기 위한 '안전'을 붙인다. 저녁 시간대라 눈에 보이는 결과(전·후 비교)로 몰입 유지.</aside>
+  </section>
+
+  <!-- 2 왜 안전장치인가 -->
+  <section class="slide" data-kicker="왜 안전장치인가">
+    <h2>똑똑함보다 먼저 필요한 것</h2>
+    <div class="callout danger">
+      <span class="tag">위험 사례</span>
+      <ul>
+        <li>AI가 자신 있게 <strong>틀린 답</strong>을 한다 (환각)</li>
+        <li>특정 관점으로 <strong>편향된</strong> 답을 한다</li>
+        <li>수학 도우미인데 학생이 딴 얘기를 시키면 <strong>주제에서 이탈</strong>한다</li>
+      </ul>
+    </div>
+    <p class="lead">어른한텐 웃고 넘길 일이, <em>학생한텐 그대로 오답으로·상처로</em> 남습니다.</p>
+    <aside class="notes"><b>강조:</b> 위험 사례는 사전 녹화·캡처로 순서대로 재생(라이브 실패 방지). 학생 대상이라 위험이 더 크다는 점을 반복.</aside>
+  </section>
+
+  <!-- 3 신뢰의 문제 -->
+  <section class="slide" data-kicker="핵심 프레이밍">
+    <h2>기능이 아니라 '신뢰'의 문제</h2>
+    <p class="lead">안전장치는 '기능 하나 더'가 아닙니다.</p>
+    <div class="callout warn">
+      <span class="tag">되물을 질문</span>
+      <p>이 도구를 <strong>학생·학부모가 믿고 쓸 수 있는가?</strong></p>
+    </div>
+    <ul>
+      <li>거절할 줄 아는 챗봇이 <strong>교실에서 믿고 쓸 수 있는</strong> 챗봇</li>
+      <li>신뢰는 <em>"모른다"고 말하는 정직함</em>에서 나온다</li>
+    </ul>
+    <aside class="notes">이 차시 내내 "믿고 쓸 수 있는가"로 계속 되돌린다. 안전=신뢰 프레이밍이 오늘의 축.</aside>
+  </section>
+
+  <!-- 4 개념 -->
+  <section class="slide" data-kicker="교실 안전장치란?">
+    <h2>말로 규칙을 정하는 것</h2>
+    <p class="lead">대단한 기술이 아닙니다. 5차시에 써본 <strong>시스템 프롬프트</strong>에 몇 줄을 더할 뿐.</p>
+    <div class="grid cols-3">
+      <div class="card"><div class="num">1</div><h3>역할 한정</h3><p>"너는 이것만 하는 도우미다"</p></div>
+      <div class="card"><div class="num">2</div><h3>금지 주제</h3><p>"이런 건 하지 마라"</p></div>
+      <div class="card card--accent"><div class="num">3</div><h3>모르면 거절</h3><p>"모르면 모른다고 해라"</p></div>
+    </div>
+    <aside class="notes">코드가 아니라 '말로 규칙 정하기'로 느끼게 한다. 개념은 세 줄로 압축해 인지 부담을 낮춘다.</aside>
+  </section>
+
+  <!-- 5 섹션: 실습 -->
+  <section class="slide slide--section" data-kicker="실습">
+    <h1>내 챗봇에 안전장치 달기</h1>
+    <p class="lead">5차시에서 만든 Colab 챗봇에 시스템 프롬프트로 적용</p>
+    <aside class="notes">5차시 본인 챗봇을 그대로 사용. 미완성자는 공용 예제 챗봇 Colab 사본으로 조용히 개별 배정(민은실).</aside>
+  </section>
+
+  <!-- 6 시스템 프롬프트 예시 -->
+  <section class="slide" data-kicker="실습 · 시스템 프롬프트 예시">
+    <h3>세 블록 구조로 챗봇에 붙입니다</h3>
+    <pre><span class="c"># 역할 한정</span>
+너는 '중학교 3학년 수학' 학습 도우미다.
+제공된 <span class="k">수업 자료 범위 안</span>의 개념 질문에만 답한다.
+다른 과목·시사·개인 신상·잡담 요청은 정중히 거절한다.
+
+<span class="c"># 거절 규칙</span>
+자료에 근거가 없으면 지어내지 말고
+<span class="s">"그 부분은 자료에 없어서 확실하지 않아요"</span>라고 답한다.
+정답을 통째로 주지 말고 <span class="k">힌트 위주</span>로 안내한다.
+
+<span class="c"># 안전</span>
+폭력·차별·부적절한 요청은 답하지 않고 학습 주제로 되돌린다.
+확신이 없으면 아는 척하지 않는다 — <span class="s">"모른다"가 안전</span>이다.</pre>
+    <aside class="notes">'역할 한정 → 거절 규칙 → 안전' 세 블록 강조. 학생용이라 '정답 통째로 주지 않기'(정직한 AI)를 함께 심는다.</aside>
+  </section>
+
+  <!-- 7 실습 지시 -->
+  <section class="slide" data-kicker="실습 · 지시">
+    <h2>세 가지만 채우세요</h2>
+    <div class="grid cols-3">
+      <div class="card"><div class="num">1</div><h3>역할 한정</h3><p>내 챗봇은 무슨 과목·무슨 학년 도우미인가</p></div>
+      <div class="card"><div class="num">2</div><h3>금지 주제</h3><p>무엇은 거절할 것인가</p></div>
+      <div class="card"><div class="num">3</div><h3>모르면 거절</h3><p>자료에 없으면 뭐라고 답할까</p></div>
+    </div>
+    <div class="callout"><span class="tag">해볼 것</span><p>템플릿을 <strong>그대로 쓰지 말고</strong> 내 챗봇에 맞게 바꾸세요. <strong>22분</strong>입니다.</p></div>
+    <aside class="notes">순회하며 과도 거절/누락 조정 지원(민은실 상시). 과잉 차단이면 "무엇을 허용할지"부터 다시 쓰게.</aside>
+  </section>
+
+  <!-- 8 전·후 비교 -->
+  <section class="slide" data-kicker="실습 · 전·후 비교">
+    <h2>정말 작동하는지, 눈으로</h2>
+    <p class="lead">같은 질문을 <strong>적용 전</strong>과 <strong>적용 후</strong>에 던지고, 응답을 나란히 기록하세요.</p>
+    <div class="callout"><span class="tag">동일 질문 3종</span><ol>
+      <li>자료에 <strong>없는 걸</strong> 묻기</li>
+      <li><strong>부적절한 걸</strong> 시키기</li>
+      <li><strong>딴 주제</strong>로 새기</li>
+    </ol></div>
+    <aside class="notes">전·후 비교표는 코들에. 응답 변화 기록을 유도(민은실). 이게 내일 트랙 작업의 출발 자료.</aside>
+  </section>
+
+  <!-- 9 산출물 -->
+  <section class="slide" data-kicker="오늘의 산출물">
+    <h2>거절할 줄 아는 챗봇</h2>
+    <div class="split">
+      <div><div class="panel a"><span class="badge a">산출물 ①</span><h3>안전장치 적용 챗봇</h3><p>역할 한정·거절 규칙이 붙어 동작하는 내 챗봇</p></div></div>
+      <div><div class="panel b"><span class="badge b">산출물 ②</span><h3>전·후 응답 비교</h3><p>동일 질문 3종의 적용 전/후 응답 기록</p></div></div>
+    </div>
+    <div class="callout"><span class="tag">기록</span><p>둘 다 <strong>코들 보드</strong>에 저장 — 내일 트랙 작업의 재료입니다.</p></div>
+    <aside class="notes">아까는 아무거나 답하던 챗봇이 지금은 "그건 제 역할이 아니에요"라고 말한다. 이 변화를 함께 확인.</aside>
+  </section>
+
+  <!-- 10 1일차 마무리 -->
+  <section class="slide center" data-kicker="1일차 마무리">
+    <h2>쓰는 사람에서, 안전하게 만드는 사람으로</h2>
+    <p class="lead">아침엔 소버린 AI 이야기로 시작했는데,<br>지금 손엔 <strong>직접 만든, 거절할 줄 아는 챗봇</strong>이 있습니다.</p>
+    <div class="tools"><span class="tool">코들 산출물 저장</span><span class="tool">QR 출석</span><span class="tool">내일 트랙·시각·장소 확인</span></div>
+    <aside class="notes">회고 한두 마디로 간결하게(저녁 피로 배려). QR 출석·다음 날 트랙 안내 후 종료.</aside>
+  </section>
+
+  <!-- 11 내일 예고 -->
+  <section class="slide center" data-kicker="내일 예고">
+    <h2>내일은 두 트랙으로</h2>
+    <div class="split">
+      <div><div class="panel a"><span class="badge a">트랙 A</span><h3>파이썬 자동채점 + AI 튜터</h3><p>내 수업에 진짜 쓸 도구로 본격 제작</p></div></div>
+      <div><div class="panel b"><span class="badge b">트랙 B</span><h3>자료 기반 AI 학습 챗봇</h3><p>내 수업에 진짜 쓸 도구로 본격 제작</p></div></div>
+    </div>
+    <p class="lead">오늘의 안전장치와 전·후 비교가 <strong>내일 도구 제작·안전성 점검</strong>으로 이어집니다.</p>
+    <aside class="notes">오늘 만든 안전장치·전·후 비교, 6차시 4요소 빈틈이 내일 작업의 재료. 오늘 정말 수고 많으셨습니다.</aside>
+  </section>
+
+  <div class="hud"><span class="brand">2026 한국형-AI 교사개발자 양성 · 팀모노리스</span><span id="counter"></span></div>
+</div></div>
+<script src="assets/slides.js"></script>
+</body>
+</html>

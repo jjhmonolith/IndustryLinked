@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2일차 1차시 · 도구 만들기 — 짓다로 바이브코딩</title>
+<link rel="stylesheet" href="assets/slides.css">
+</head>
+<body>
+<div class="stage"><div class="deck">
+
+  <!-- 1 표지 -->
+  <section class="slide slide--cover is-active" data-kicker="2일차 · 1차시 · 09:00–11:00 (2h)">
+    <h1>도구 만들기</h1>
+    <p class="lead">짓다로, 내 수업 도구를 직접 바이브코딩한다</p>
+    <div class="meta">
+      <span>트랙 A · 파이썬 자동채점 + AI 튜터</span>
+      <span>트랙 B · 자료 기반 AI 학습 챗봇</span>
+      <span>강사 배영빈 / 김비치·김세윤</span>
+    </div>
+    <aside class="notes"><b>오프닝:</b> 어제 만든 챗봇 MVP를 '진짜 수업에서 쓸 도구'로 키우는 시간. 오늘 목표는 기능을 많이 붙이는 게 아니라, 도구 하나가 처음부터 끝까지 동작하게 만드는 것.</aside>
+  </section>
+
+  <!-- 2 오늘의 목표 -->
+  <section class="slide" data-kicker="오늘의 목표">
+    <h2>오늘, 딱 하나만</h2>
+    <p class="lead">"내 수업에서 실제로 쓸 도구 하나가, 처음부터 끝까지 동작한다."</p>
+    <ul>
+      <li>어제의 아이디어·자료를 <strong>작동하는 도구</strong>로 완성한다</li>
+      <li>코딩이 아니라 <strong>AI와 대화</strong>로 만든다 — 짓다 바이브코딩</li>
+      <li>완벽함이 아니라 <em>작동하는 하나</em>가 목표</li>
+    </ul>
+    <aside class="notes"><b>강조:</b> 기능 개수 경쟁 아님. "작동하는 하나". 막히면 혼자 끙끙대지 말고 옆 사람과 화면 공유 + 보조강사 호출.</aside>
+  </section>
+
+  <!-- 3 시작점 -->
+  <section class="slide" data-kicker="시작점">
+    <h2>어제에서 이어집니다</h2>
+    <div class="grid cols-3">
+      <div class="card"><div class="num">1</div><h3>수업 문제</h3><p>내가 풀고 싶은 한 가지</p></div>
+      <div class="card"><div class="num">2</div><h3>자료·아이디어</h3><p>구조화한 수업자료 / 첫 챗봇 스케치</p></div>
+      <div class="card card--accent"><div class="num">3</div><h3>오늘: 도구 v1</h3><p>짓다로 완성해 갤러리에</p></div>
+    </div>
+    <p class="lead">필요한 재료는 이미 손에 있습니다. 오늘은 <strong>조립</strong>입니다.</p>
+    <aside class="notes">각자 준비물 확인: 트랙 A는 예제 문제·정답·테스트케이스 / 트랙 B는 본인 수업자료 1개 단원.</aside>
+  </section>
+
+  <!-- 4 섹션: 짓다 -->
+  <section class="slide slide--section" data-kicker="오늘의 작업 도구">
+    <h1>오늘은 '짓다'로 만듭니다</h1>
+    <p class="lead">AI와 대화하며 코딩 없이 완성하는 바이브코딩 플랫폼</p>
+    <aside class="notes">짓다 = 팀모노리스의 바이브코딩 해커톤 플랫폼. 설치·로그인·명령어 없이 브라우저에서.</aside>
+  </section>
+
+  <!-- 5 짓다란 -->
+  <section class="slide" data-kicker="짓다(Jitda)란?">
+    <h2>말로 만드는 도구</h2>
+    <ul>
+      <li>AI에게 <strong>한국어로 말하면</strong> 앱이 만들어진다 — "이런 도구 만들어줘"</li>
+      <li>바꾸고 싶으면 다시 말한다 — "채점 결과를 표로 보여줘"</li>
+      <li>만든 앱은 짓다가 <strong>바로 호스팅</strong> — 링크 하나로 공유</li>
+      <li>AI 모델로 <strong>Solar</strong>를 붙일 수 있다</li>
+    </ul>
+    <div class="tools"><span class="tool">설치 없음</span><span class="tool">로그인 없음</span><span class="tool">명령어 없음</span><span class="tool">브라우저만</span></div>
+    <aside class="notes">비전공 교사도 사전교육 후 제작 가능. "코딩 못 해도 됩니다"를 반복해 진입장벽 낮추기.</aside>
+  </section>
+
+  <!-- 6 흐름 4단계 -->
+  <section class="slide" data-kicker="짓다 사용 흐름">
+    <h2>네 걸음이면 됩니다</h2>
+    <div class="grid cols-4">
+      <div class="card"><div class="num">1</div><h3>프로젝트 생성</h3><p>도구 이름·목적 입력</p></div>
+      <div class="card"><div class="num">2</div><h3>AI 채팅으로 제작</h3><p>왼쪽 창에 "이렇게 만들어줘"</p></div>
+      <div class="card"><div class="num">3</div><h3>라이브 미리보기</h3><p>오른쪽 창에서 바로 확인</p></div>
+      <div class="card card--accent"><div class="num">4</div><h3>갤러리 공개</h3><p>링크로 전시·공유</p></div>
+    </div>
+    <aside class="notes">화면은 왼쪽 AI 채팅 / 오른쪽 라이브 미리보기. 대화 → 즉시 반영 → 확인의 반복.</aside>
+  </section>
+
+  <!-- 7 화면 3요소 -->
+  <section class="slide" data-kicker="짓다 화면">
+    <h2>화면은 세 곳만 기억</h2>
+    <div class="grid cols-3">
+      <div class="card"><h3>AI 채팅</h3><p>왼쪽. 만들고 싶은 걸 말로 지시</p></div>
+      <div class="card"><h3>라이브 미리보기</h3><p>오른쪽. 만든 앱이 실시간으로 뜸</p></div>
+      <div class="card"><h3>갤러리</h3><p>완성작 전시·동료 사용·평가</p></div>
+    </div>
+    <p class="lead">코드는 짓다의 AI가 씁니다. 우리는 <strong>무엇을 만들지</strong>만 정합니다.</p>
+    <aside class="notes">심사·평가는 오늘이 아니라 2일차 마지막·본선. 오늘은 제작에 집중.</aside>
+  </section>
+
+  <!-- 8 트랙 나눔 -->
+  <section class="slide" data-kicker="지금부터 트랙별">
+    <h2>두 갈래로 나뉩니다</h2>
+    <div class="split">
+      <div><div class="panel a"><span class="badge a">트랙 A</span><h3>파이썬 자동채점 + AI 튜터</h3><p>학생 코드를 채점하고, 정답 대신 힌트·해설을 주는 도구</p></div></div>
+      <div><div class="panel b"><span class="badge b">트랙 B</span><h3>자료 기반 AI 학습 챗봇</h3><p>내 수업자료 범위 안에서만 답하는 챗봇</p></div></div>
+    </div>
+    <aside class="notes">트랙 A 30명×1반 / 트랙 B 35명×2반(동시 운영). 이후 슬라이드는 각 트랙 강사가 자기 트랙만 진행.</aside>
+  </section>
+
+  <!-- 9 섹션 트랙 A -->
+  <section class="slide slide--section" data-kicker="트랙 A">
+    <h1>파이썬 자동채점 + AI 튜터</h1>
+    <p class="lead">채점 → 힌트 → 해설, 하나의 흐름으로</p>
+  </section>
+
+  <!-- 10 트랙 A 무엇을 -->
+  <section class="slide" data-kicker="트랙 A · 무엇을 만드나">
+    <h2>세 기능이 이어집니다</h2>
+    <div class="grid cols-3">
+      <div class="card"><div class="num">1</div><h3>자동 채점</h3><p>정답 비교로 통과/실패를 정확히 가른다</p></div>
+      <div class="card"><div class="num">2</div><h3>AI 힌트</h3><p>막힌 학생에게 수준에 맞는 힌트</p></div>
+      <div class="card"><div class="num">3</div><h3>코드 해설 튜터</h3><p>틀린 부분과 이유를 학생 눈높이로</p></div>
+    </div>
+    <p class="lead">채점은 <strong>정확히</strong>, 힌트·해설은 <strong>Solar</strong>가.</p>
+    <aside class="notes">채점은 판단이 필요 없으니 정답 비교로 정확히. AI는 힌트·해설처럼 판단이 필요한 곳에만.</aside>
+  </section>
+
+  <!-- 11 트랙 A 철학 -->
+  <section class="slide" data-kicker="트랙 A · 핵심 철학">
+    <h2>정답을 대신 주지 않는다</h2>
+    <div class="callout">
+      <span class="tag">원칙</span>
+      <p>정답 코드를 통째로 주면 학생은 생각을 멈춥니다. 튜터의 역할은 <strong>스스로 고치게 만드는 것</strong>.</p>
+      <ul>
+        <li>어느 줄의 무엇이 왜 문제인지 <strong>한 문장</strong>으로</li>
+        <li>다음 시도를 위한 <strong>질문 하나</strong>를 던진다</li>
+      </ul>
+    </div>
+    <aside class="notes">이게 이 연수 트랙 A의 핵심 철학. 짓다에 요청할 때 이 규칙을 반드시 못박게 한다.</aside>
+  </section>
+
+  <!-- 12 트랙 A 실습 -->
+  <section class="slide" data-kicker="트랙 A · 실습">
+    <h3>짓다 AI 채팅에 이렇게 요청하세요</h3>
+    <pre>파이썬 문제 하나를 풀게 하고, 학생이 제출한 코드를
+<span class="c">미리 정한 테스트케이스로 자동 채점하는 웹앱</span>을 만들어줘.
+
+<span class="k">규칙</span>: 틀리면 <span class="s">정답 코드는 절대 보여주지 말고</span>,
+"어느 줄이 왜 틀렸는지" 한 문장 힌트와
+다음 시도를 위한 질문 하나만 보여줘.
+힌트·해설 문구는 <span class="s">Solar</span>로 생성해줘.</pre>
+    <div class="callout"><span class="tag">해볼 것</span><ol>
+      <li>테스트케이스 <strong>3개 이상</strong> 넣고, 일부러 틀린 코드로 실패가 뜨는지 확인</li>
+      <li>힌트에 <strong>정답 코드가 새어 나오면</strong> 규칙을 더 강하게 다시 요청</li>
+      <li>채점 → 힌트 → 해설이 <strong>한 흐름</strong>으로 돌면 v1 완성</li>
+    </ol></div>
+    <aside class="notes">짓다가 코드를 쓰되, '무엇을·어떤 규칙으로'는 교사가 정한다. 정답 유출 여부는 반드시 눈으로 확인.</aside>
+  </section>
+
+  <!-- 13 섹션 트랙 B -->
+  <section class="slide slide--section" data-kicker="트랙 B">
+    <h1>자료 기반 AI 학습 챗봇</h1>
+    <p class="lead">내 수업자료 안에서만 답하는 챗봇</p>
+  </section>
+
+  <!-- 14 트랙 B 무엇을 -->
+  <section class="slide" data-kicker="트랙 B · 무엇을 만드나">
+    <h2>자료가 챗봇의 지식이 된다</h2>
+    <table>
+      <tr><th>단계</th><th>하는 일</th></tr>
+      <tr><td>① 구조화</td><td>수업자료를 <strong>Document Parse</strong>로 구조화</td></tr>
+      <tr><td>② 핵심 추출</td><td><strong>Information Extract</strong>로 핵심 학습 항목만 뽑기</td></tr>
+      <tr><td>③ 지식 베이스</td><td>뽑은 항목이 챗봇의 지식이 됨</td></tr>
+      <tr><td>④ 응답</td><td>지식 베이스 <strong>범위 안에서만</strong> 답변</td></tr>
+    </table>
+    <aside class="notes">어제 day1_04·05에서 만든 구조화·추출 결과가 오늘 챗봇의 입력. 표·수식 많은 자료는 깔끔한 단원부터.</aside>
+  </section>
+
+  <!-- 15 트랙 B 철학 -->
+  <section class="slide" data-kicker="트랙 B · 핵심 철학">
+    <h2>자료 밖은 정직하게 거절</h2>
+    <div class="callout danger">
+      <span class="tag">원칙</span>
+      <p>챗봇이 자료에 없는 걸 <strong>지어내면</strong> 도구 전체의 신뢰가 무너집니다. 신뢰는 <em>"모른다"고 말하는 정직함</em>에서 나옵니다.</p>
+    </div>
+    <pre>너는 아래 &lt;학습자료&gt;에만 근거해 답하는 챗봇이다.
+<span class="k">규칙</span>
+1) 답은 반드시 자료 안 내용으로만 구성한다.
+2) 자료에 없으면 지어내지 말고 <span class="s">"이번 수업자료 범위에 없어요"</span>라고 거절한다.
+3) 답 끝에 근거가 된 자료 항목을 표시한다.</pre>
+    <aside class="notes">거절 규칙은 챗봇 시스템 프롬프트에 못박는다. 짓다에 이 규칙을 그대로 요청.</aside>
+  </section>
+
+  <!-- 16 트랙 B 실습 -->
+  <section class="slide" data-kicker="트랙 B · 실습">
+    <h3>짓다 AI 채팅에 이렇게 요청하세요</h3>
+    <pre>내가 올린 수업자료 범위 안에서만 답하는
+<span class="c">학습 보조 챗봇 웹앱</span>을 만들어줘. 모델은 <span class="s">Solar</span>.
+
+- 자료에 <span class="k">있는</span> 질문엔 답하고 근거 항목을 표시
+- 자료에 <span class="k">없는</span> 질문은 지어내지 말고 정중히 거절
+- 학생은 닉네임만으로 사용, 교사는 대화 로그 확인</pre>
+    <div class="callout"><span class="tag">해볼 것</span><ol>
+      <li>지식 베이스는 오늘 <strong>1개 단원</strong>으로 범위를 좁힌다</li>
+      <li>자료 <strong>안</strong> 질문 → 근거 표시되는지 확인</li>
+      <li>자료 <strong>밖</strong> 질문 → 지어내지 않고 거절하는지 확인</li>
+    </ol></div>
+    <aside class="notes">거절이 안 되고 지어내면 규칙을 더 강하게 다시 요청. 오늘은 범위를 넓히지 말 것.</aside>
+  </section>
+
+  <!-- 17 완성 체크 -->
+  <section class="slide" data-kicker="마무리 점검">
+    <h2>도구 v1, 한 번은 끝까지</h2>
+    <div class="split">
+      <div><div class="panel a"><span class="badge a">트랙 A</span><ul><li>채점 → 힌트 → 해설이 한 흐름으로 동작</li><li>힌트에 정답 코드 없음 확인</li></ul></div></div>
+      <div><div class="panel b"><span class="badge b">트랙 B</span><ul><li>자료 안 질문에 근거와 함께 답변</li><li>자료 밖 질문은 거절</li></ul></div></div>
+    </div>
+    <div class="callout"><span class="tag">기록</span><p>완성한 도구 v1을 <strong>짓다 갤러리</strong>에 올리고, 코들에 <strong>한 줄 회고</strong>를 남기세요. 다음 차시와 본선으로 이어집니다.</p></div>
+    <aside class="notes">완벽하지 않아도 됨. "작동하는 하나"면 성공. 갤러리·코들 기록 필수.</aside>
+  </section>
+
+  <!-- 18 다음 -->
+  <section class="slide center" data-kicker="다음 차시">
+    <h2>이 도구, 학생 앞에 내놔도 될까?</h2>
+    <p class="lead">2차시에서 <strong>잘못된 답·주제 이탈</strong>을 막는 안전장치를 붙이고,<br>직접 나쁜 질문을 던져 도구가 버티는지 검증합니다.</p>
+    <aside class="notes">지금 만든 도구를 켜 둔 채로 2차시로 바로 이어감.</aside>
+  </section>
+
+  <div class="hud"><span class="brand">2026 한국형-AI 교사개발자 양성 · 팀모노리스</span><span id="counter"></span></div>
+</div></div>
+<script src="assets/slides.js"></script>
+</body>
+</html>

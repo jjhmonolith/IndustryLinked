@@ -1,0 +1,203 @@
+/* ============================================================
+   2026 한국형-AI 기반 교사개발자 양성 과정 — 수업자료 슬라이드
+   16:9 공용 프레임워크
+   ============================================================ */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+:root {
+  --ink: #16213e;
+  --muted: #5b6472;
+  --line: #e3e8f0;
+  --bg: #ffffff;
+  --panel: #f4f6fb;
+  --brand: #2743d6;      /* 인디고 — 주 브랜드 */
+  --brand-2: #4b6bff;
+  --accent: #12b886;     /* 실습(초록) */
+  --warn: #f08c00;       /* 안전·주의(앰버) */
+  --danger: #e03131;     /* 위험 사례(적) */
+  --track-a: #2743d6;    /* 트랙 A */
+  --track-b: #0ca678;    /* 트랙 B */
+  --stage-bg: #0b1020;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: var(--stage-bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- 무대(16:9 고정) ---- */
+.stage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.deck {
+  position: relative;
+  width: min(100vw, 177.78vh);
+  height: min(56.25vw, 100vh);
+  background: var(--bg);
+  container-type: size;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(0,0,0,.5);
+}
+
+/* ---- 슬라이드 ---- */
+.slide {
+  position: absolute;
+  inset: 0;
+  padding: 8cqh 8cqw 7cqh;
+  display: none;
+  flex-direction: column;
+  gap: 3cqh;
+  font-size: 3cqh;
+  line-height: 1.5;
+  animation: fade .35s ease;
+}
+.slide.is-active { display: flex; }
+@keyframes fade { from { opacity: 0; transform: translateY(1.2cqh); } to { opacity: 1; transform: none; } }
+
+/* 상단 러너 */
+.slide::before {
+  content: attr(data-kicker);
+  position: absolute;
+  top: 3.4cqh; left: 8cqw;
+  font-size: 2.1cqh; font-weight: 700; letter-spacing: .04em;
+  color: var(--brand);
+  text-transform: none;
+}
+.slide[data-kicker=""]::before { content: none; }
+
+/* 제목 */
+.slide h1 { font-size: 7.2cqh; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; }
+.slide h2 { font-size: 5.4cqh; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
+.slide h3 { font-size: 3.6cqh; font-weight: 700; color: var(--brand); }
+.slide p { font-size: 3cqh; }
+.slide .lead { font-size: 3.6cqh; color: var(--muted); font-weight: 500; }
+.slide strong { color: var(--brand); font-weight: 800; }
+.slide em { font-style: normal; background: linear-gradient(transparent 55%, #ffe08a 55%); font-weight: 700; }
+
+ul, ol { padding-left: 1.1em; display: flex; flex-direction: column; gap: 1.6cqh; }
+li { font-size: 3cqh; }
+li::marker { color: var(--brand); font-weight: 800; }
+
+/* ---- 표지 슬라이드 ---- */
+.slide--cover {
+  background: radial-gradient(120% 120% at 100% 0%, #22307a 0%, #16213e 45%, #0b1020 100%);
+  color: #fff; justify-content: center; gap: 4cqh;
+}
+.slide--cover::before { color: #9db2ff; }
+.slide--cover h1 { color: #fff; font-size: 8cqh; }
+.slide--cover .lead { color: #c8d3f5; }
+.slide--cover .meta { display: flex; gap: 2cqw; flex-wrap: wrap; font-size: 2.4cqh; color: #9db2ff; margin-top: 2cqh; }
+.slide--cover .meta span { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); padding: 1cqh 1.6cqw; border-radius: 100px; }
+
+/* ---- 섹션 구분 ---- */
+.slide--section { background: var(--brand); color: #fff; justify-content: center; }
+.slide--section::before { color: #c3cffb; }
+.slide--section h1 { color: #fff; }
+.slide--section .lead { color: #dbe3ff; }
+
+/* ---- 카드 그리드 ---- */
+.grid { display: grid; gap: 2.4cqw; }
+.grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 2cqh;
+  padding: 3cqh 2.6cqw; display: flex; flex-direction: column; gap: 1.4cqh;
+}
+.card h3 { font-size: 3.2cqh; }
+.card p, .card li { font-size: 2.5cqh; color: var(--muted); }
+.card .num {
+  width: 4.6cqh; height: 4.6cqh; border-radius: 50%; background: var(--brand); color: #fff;
+  display: grid; place-items: center; font-weight: 800; font-size: 2.6cqh;
+}
+.card--accent { border-color: var(--accent); background: #eafaf3; }
+.card--accent .num { background: var(--accent); }
+.card--warn { border-color: var(--warn); background: #fff6e8; }
+.card--warn .num { background: var(--warn); }
+
+/* ---- 실습 콜아웃 ---- */
+.callout {
+  border-left: 1cqh solid var(--accent); background: #eafaf3;
+  border-radius: 0 1.6cqh 1.6cqh 0; padding: 2.6cqh 3cqw; display: flex; flex-direction: column; gap: 1.4cqh;
+}
+.callout .tag {
+  align-self: flex-start; background: var(--accent); color: #fff; font-weight: 800;
+  font-size: 2.2cqh; padding: .6cqh 1.4cqw; border-radius: 100px;
+}
+.callout.warn { border-color: var(--warn); background: #fff6e8; }
+.callout.warn .tag { background: var(--warn); }
+.callout.danger { border-color: var(--danger); background: #fff0f0; }
+.callout.danger .tag { background: var(--danger); }
+.callout ol, .callout ul { gap: 1.1cqh; }
+.callout li { font-size: 2.7cqh; }
+
+/* ---- 코드/프롬프트 블록 ---- */
+pre {
+  background: #0f1730; color: #e7ecff; border-radius: 1.6cqh; padding: 2.4cqh 2.6cqw;
+  font-family: 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+  font-size: 2.3cqh; line-height: 1.55; overflow: auto; white-space: pre-wrap;
+}
+pre .c { color: #7f8db3; }        /* comment */
+pre .k { color: #7cc4ff; }        /* keyword */
+pre .s { color: #9ff0c8; }        /* string */
+code.inline { background: var(--panel); border: 1px solid var(--line); border-radius: .5cqh; padding: .2cqh .8cqw; font-family: 'SF Mono', Menlo, monospace; font-size: 2.6cqh; color: var(--brand); }
+
+/* ---- 표 ---- */
+table { width: 100%; border-collapse: collapse; font-size: 2.5cqh; }
+th, td { text-align: left; padding: 1.4cqh 1.6cqw; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--brand); font-weight: 800; border-bottom: 2px solid var(--brand); }
+
+/* ---- 트랙 배지 ---- */
+.badge { display: inline-flex; align-items: center; gap: .6cqw; font-weight: 800; font-size: 2.4cqh; padding: .6cqh 1.4cqw; border-radius: 100px; color: #fff; }
+.badge.a { background: var(--track-a); }
+.badge.b { background: var(--track-b); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4cqw; height: 100%; }
+.split > div { display: flex; flex-direction: column; gap: 1.6cqh; }
+.split .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 1.6cqh; padding: 2.4cqh 2.4cqw; height: 100%; }
+.panel.a { border-top: .8cqh solid var(--track-a); }
+.panel.b { border-top: .8cqh solid var(--track-b); }
+
+.tools { display: flex; gap: 1.4cqw; flex-wrap: wrap; margin-top: auto; }
+.tool { background: var(--panel); border: 1px solid var(--line); border-radius: 100px; padding: .8cqh 1.6cqw; font-size: 2.3cqh; font-weight: 600; color: var(--muted); }
+
+.spacer { flex: 1; }
+.center { align-items: center; text-align: center; justify-content: center; }
+
+/* ---- 진행 UI ---- */
+.hud {
+  position: absolute; bottom: 2.4cqh; left: 8cqw; right: 8cqw;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 2cqh; color: var(--muted); pointer-events: none;
+}
+.hud .brand { font-weight: 700; color: var(--brand); }
+.progress { position: absolute; bottom: 0; left: 0; height: .7cqh; background: var(--brand); transition: width .3s ease; z-index: 5; }
+
+/* 발표자 노트 */
+.notes { display: none; }
+body.show-notes .notes {
+  display: block; position: fixed; bottom: 0; left: 0; right: 0;
+  background: #0b1020; color: #dbe3ff; padding: 16px 24px; font-size: 15px; line-height: 1.5;
+  max-height: 32vh; overflow: auto; z-index: 50; border-top: 2px solid var(--brand);
+}
+.notes b { color: #9db2ff; }
+
+/* 도움말 */
+.help { position: fixed; top: 12px; right: 14px; z-index: 60; font-size: 12px; color: #8895b8; }
+.help kbd { background: #1c2547; border: 1px solid #33406e; border-radius: 4px; padding: 1px 6px; color: #cdd7f5; font-family: monospace; }
+
+@media print {
+  .stage { position: static; display: block; }
+  .deck { width: 100%; height: auto; box-shadow: none; }
+  .slide { position: static; display: flex !important; page-break-after: always; height: 100vh; }
+  .hud, .progress, .help { display: none; }
+}

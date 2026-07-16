@@ -13,7 +13,7 @@
 | `02_track_spec/` | 트랙별 1pager, MVP mock, 기술스택 매핑 |
 | `03_session_plans/` | 차시별 운영안(무엇을 — 목표·흐름·산출물) |
 | `04_curriculum_spec/` | 심의자료(6월 제출본) + 사전검토 기록 |
-| `05_slides_handouts/` | 차시별 슬라이드·핸드아웃 |
+| `05_slides_handouts/` | 차시별 강의용 슬라이드(16:9 HTML) — `index.html`로 열기. 팀모노리스 진행 차시 |
 | `06_learner_materials/` | 사전 안내, 회고 양식, 사후 자료 |
 | `07_delivery_scripts/` | **실제 수업 진행용 상세 설계**(어떻게 — 분 단위 진행표·강사 스크립트·강의 가이드라인) |
 

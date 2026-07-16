@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>본선 3차시 · 피드백 분석과 도구 개선 계획 수립 멘토링</title>
+<link rel="stylesheet" href="assets/slides.css">
+</head>
+<body>
+<div class="stage"><div class="deck">
+
+  <!-- 1 표지 -->
+  <section class="slide slide--cover is-active" data-kicker="본선 · 3차시 · 14:00–17:00 (3h)">
+    <h1>피드백 분석과 도구 개선 계획 수립 멘토링</h1>
+    <p class="lead">받은 피드백을, 실제 개선으로 바꾼다</p>
+    <div class="meta">
+      <span>본선 · 5분반(40명/반)</span>
+      <span>반별 전담 멘토 · 팀모노리스 + 업스테이지</span>
+      <span>전문가 1:n 멘토링</span>
+    </div>
+    <aside class="notes"><b>오프닝(전담 멘토):</b> 오전에 받은 많은 피드백에 마음이 두 갈래로 갈릴 것. '고쳐야겠다'와 '이걸 다 어떻게…' 하는 부담. 오늘 오후의 첫 원칙을 하나만 기억하게 한다.</aside>
+  </section>
+
+  <!-- 2 오늘의 목표 -->
+  <section class="slide" data-kicker="오늘의 목표">
+    <h2>골라서, 확실하게 바꾼다</h2>
+    <p class="lead">"오전에 받은 피드백을, 개발 환경에서 실제 개선으로 옮긴다."</p>
+    <ul>
+      <li>'오늘 안에 가능하고 효과 큰' 개선을 <strong>선별</strong>한다</li>
+      <li>전문가 멘토링으로 <strong>개발 환경에서 직접</strong> 도구를 고친다</li>
+      <li>개선 전·후 <strong>동작 차이를 기록</strong>한다</li>
+    </ul>
+    <aside class="notes">앞 차시 4항목 피드백을 재료로 이어받는다. 오늘 산출물: 선별 목록(보류 사유 포함)·개선 계획표·전후 기록·발표 강조 개선점 1~2개. 저녁 4차시에서 개선한 도구를 3분 발표.</aside>
+  </section>
+
+  <!-- 3 오늘 3시간 흐름 -->
+  <section class="slide" data-kicker="오늘 3시간 흐름">
+    <h2>다섯 블록으로 리듬 있게</h2>
+    <div class="grid cols-3">
+      <div class="card"><div class="num">1</div><h3>안내</h3><p>오늘의 원칙·멘토 배정·계획 양식 (10분)</p></div>
+      <div class="card"><div class="num">2</div><h3>의견 선별</h3><p>적용/보류 분류, 보류 사유 (40분)</p></div>
+      <div class="card"><div class="num">3</div><h3>개선 계획</h3><p>우선순위·작업 단위·예상 효과 (40분)</p></div>
+      <div class="card card--accent"><div class="num">4</div><h3>1:n 멘토링 실습</h3><p>개발 환경에서 직접 개선 (80분)</p></div>
+      <div class="card"><div class="num">5</div><h3>정리</h3><p>강조 개선점 선정·제출 (10분)</p></div>
+    </div>
+    <p class="lead">④ 멘토링이 <strong>오늘의 심장부</strong>, 나머지는 그 실습을 준비·수확하는 날개.</p>
+    <aside class="notes">블록 4(80분)의 시간을 지킨다. 지연 시 블록 2·3의 부가 설명을 먼저 줄이고 정리(블록 5)의 발표 준비만 확보. 각 블록 종료 2분 전 전환 신호로 리듬 유지.</aside>
+  </section>
+
+  <!-- 4 섹션: 선별 -->
+  <section class="slide slide--section" data-kicker="블록 2">
+    <h1>적용 가능한 의견 추리기</h1>
+    <p class="lead">모든 피드백을 반영하지 않습니다</p>
+    <aside class="notes">오전 4항목 피드백을 한 항목씩 읽으며 적용/보류 둘 중 하나로 표시하게 한다.</aside>
+  </section>
+
+  <!-- 5 적용/보류 -->
+  <section class="slide" data-kicker="적용 / 보류 분류">
+    <h2>두 기준으로 가릅니다</h2>
+    <div class="split">
+      <div><div class="panel a"><span class="badge a">적용</span><ul><li>오늘 안에 실제로 손볼 수 있는가</li><li>학생·수업에 효과가 큰가</li></ul></div></div>
+      <div><div class="panel b"><span class="badge b">보류</span><ul><li>버리는 게 아니라 미뤄 두는 것</li><li>'왜 지금은 아닌지' 한 줄 사유 필수</li></ul></div></div>
+    </div>
+    <div class="callout"><span class="tag">사유의 쓸모</span><p>"시간이 더 필요해서", "데이터가 없어서" — 이 메모가 나중에 <strong>학교에 돌아가 다시 손볼 때의 지도</strong>가 됩니다.</p></div>
+    <aside class="notes">모든 항목을 '적용'으로 표시한 교사에게: "이 중에 오늘 세 시간으로 진짜 다 되나요? 딱 두 개만 남긴다면 뭘 남기시겠어요?"</aside>
+  </section>
+
+  <!-- 6 섹션: 계획 -->
+  <section class="slide slide--section" data-kicker="블록 3">
+    <h1>개선 계획 수립</h1>
+    <p class="lead">소원이 아니라, 손 닿는 크기의 계획으로</p>
+    <aside class="notes">적용으로 고른 항목을 개선 계획표로 옮겨 세 칸을 채우게 한다.</aside>
+  </section>
+
+  <!-- 7 개선 계획표 -->
+  <section class="slide" data-kicker="개선 계획표">
+    <h2>세 칸을 채웁니다</h2>
+    <table>
+      <tr><th>우선순위</th><th>작업 단위</th><th>예상 효과 (확인법)</th></tr>
+      <tr><td>효과×실현가능성으로 줄 세우기</td><td>30분 안에 끝날 크기로 쪼개기</td><td>같은 입력을 전·후에 넣어 응답 비교</td></tr>
+      <tr><td>상위 1~2개만 선정</td><td>예: "학년 정보 한 줄 추가"</td><td>예: "주제 이탈 질문에 안내 문구"</td></tr>
+    </table>
+    <div class="callout"><span class="tag">번역</span><p>"답변을 더 정확하게"는 계획이 아니라 <strong>소원</strong>입니다. "프롬프트에 학년 정보를 한 줄 추가한다"처럼 <em>손이 닿는 크기</em>로 잘라야 오늘 안에 끝납니다.</p></div>
+    <aside class="notes">예상 효과 칸에는 반드시 '어떻게 확인할지'까지. 범위 과다 팀은 멘토와 1:1 빠른 점검으로 축소 조정.</aside>
+  </section>
+
+  <!-- 8 핵심 원칙 -->
+  <section class="slide" data-kicker="오늘의 핵심 원칙">
+    <h2>다 반영하려 하지 마세요</h2>
+    <div class="callout warn">
+      <span class="tag">원칙</span>
+      <p><strong>모든 피드백을 반영하지 않습니다.</strong> 효과가 크고, 오늘 세 시간 안에 실제로 손볼 수 있는 것부터 골라 확실하게 바꿉니다.</p>
+      <ul>
+        <li>열 개를 어설프게 손대는 것보다, <strong>하나를 제대로</strong> 바꾸는 게 오늘의 성공</li>
+        <li>기준은 다수 의견이 아니라 <strong>내 수업 목표</strong> — 반대 의견은 보류에 사유와 함께</li>
+      </ul>
+    </div>
+    <aside class="notes">이 한 문장이 3시간 전체의 축. 서로 반대되는 피드백은 '내가 풀려던 문제에 도움이 되는 쪽'을 고르게 한다.</aside>
+  </section>
+
+  <!-- 9 섹션: 멘토링 -->
+  <section class="slide slide--section" data-kicker="블록 4 · 심장부">
+    <h1>전문가 1:n 멘토링</h1>
+    <p class="lead">개발 환경에서 실제로 도구를 개선한다</p>
+    <aside class="notes">신청 순 1:n으로 진행. 80분, 오늘 실습의 심장부.</aside>
+  </section>
+
+  <!-- 10 전·후 기록 -->
+  <section class="slide" data-kicker="멘토링 · 전후 기록">
+    <h2>먼저 '개선 전' 사진부터</h2>
+    <div class="grid cols-3">
+      <div class="card"><div class="num">1</div><h3>개선 전 캡처</h3><p>평소 입력 하나를 넣고 지금 응답을 저장</p></div>
+      <div class="card"><div class="num">2</div><h3>개발 환경에서 개선</h3><p>계획한 작업 단위 하나를 직접 손보기</p></div>
+      <div class="card card--accent"><div class="num">3</div><h3>개선 후 캡처</h3><p>같은 입력 다시 넣고 응답 비교·기록</p></div>
+    </div>
+    <div class="callout"><span class="tag">이유</span><p>개선 전 응답을 안 찍어 두면, 이따가 <strong>좋아졌는지 나빠졌는지 증명할 수가 없습니다.</strong> 이 전·후 비교가 발표에서 가장 강력한 한 장면.</p></div>
+    <aside class="notes">동일 입력 / 개선 전 응답 / 개선 후 응답 템플릿 사용. 나빠졌으면 이전 버전으로 되돌리는 것도 정당한 결정.</aside>
+  </section>
+
+  <!-- 11 멘토는 대신 짜지 않는다 -->
+  <section class="slide" data-kicker="멘토링 원칙">
+    <h2>멘토는 손을 대신 움직이지 않습니다</h2>
+    <div class="callout">
+      <span class="tag">코치</span>
+      <p>막힌 팀은 <strong>"지금 어디까지 됐고, 어디서 멈췄나요?"</strong>로 시작. 대신 만들지 않고 <strong>다음 한 걸음</strong>만 짚어 줍니다.</p>
+      <ul>
+        <li>개발 막힘은 <strong>팀모노리스 멘토</strong>, AI 응답·자료 처리는 <strong>업스테이지 멘토</strong></li>
+        <li>자료 기반 챗봇이 범위를 벗어나면 <strong>Document Parse·Information Extract 결과부터 육안 검수</strong></li>
+        <li>대신 코드를 짜 주면 오늘은 편해도 학교에 돌아가 혼자 못 고친다</li>
+      </ul>
+    </div>
+    <aside class="notes">원문이 깨졌는지, 추출이 빠졌는지 순서로 확인. "손은 선생님이 움직이셔야 오늘이 남습니다."</aside>
+  </section>
+
+  <!-- 12 멘토링 운영 -->
+  <section class="slide" data-kicker="멘토링 운영">
+    <h2>대기 시간도 산출물로</h2>
+    <ul>
+      <li>반별 <strong>두 기관 멘토</strong>(팀모노리스+업스테이지)가 40명을 분담·순회</li>
+      <li>멘토링은 <strong>신청 순 1:n</strong>, 대기열은 신청 보드·순번으로 관리</li>
+      <li>대기 팀은 <strong>개선 계획 문서화·개선 전 응답 캡처</strong>를 병행</li>
+    </ul>
+    <div class="callout warn"><span class="tag">일찍 끝난 팀</span><p>심화 미션 — "안전장치 하나 더 추가", "다른 학년용 변형", "두 번째 개선점 착수" 중 하나로.</p></div>
+    <aside class="notes">공용 키 레이트 리밋 대비, 반별로 멘토링 라운드 시점을 분산해 순차 호출 유도. 개선이 막히면 코드 대신 설정·프롬프트 조정 등 대안 접근 제시.</aside>
+  </section>
+
+  <!-- 13 마무리/다음 -->
+  <section class="slide center" data-kicker="다음 차시">
+    <h2>다섯 시, 마지막 무대로</h2>
+    <p class="lead">오늘 골라서 실제로 바꾼 개선을 <strong>동료 앞에서 3분 발표</strong>합니다.<br>발표에서 자랑할 <strong>개선 한두 개</strong>만 고르고, 전·후 비교 기록을 챙기세요.</p>
+    <div class="tools"><span class="tool">짓다(개발 환경)</span><span class="tool">Solar</span><span class="tool">Document Parse + Information Extract</span><span class="tool">코들</span></div>
+    <aside class="notes">마무리(전담 멘토): "남의 의견에 휘둘리지 않고, 골라서, 실제로 바꾸는 걸 해냈다. 계획표·전후 기록 코들에 올리고 잠깐 숨 고른 뒤 마지막 무대에서." 개선 전·후 비교 한 장면이 열 개 나열보다 강하다.</aside>
+  </section>
+
+  <div class="hud"><span class="brand">2026 한국형-AI 교사개발자 양성 · 팀모노리스</span><span id="counter"></span></div>
+</div></div>
+<script src="assets/slides.js"></script>
+</body>
+</html>

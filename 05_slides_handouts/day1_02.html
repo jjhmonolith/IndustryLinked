@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1일차 2차시 · AI 수업도구 사례 시연과 제작 절차</title>
+<link rel="stylesheet" href="assets/slides.css">
+</head>
+<body>
+<div class="stage"><div class="deck">
+
+  <!-- 1 표지 -->
+  <section class="slide slide--cover is-active" data-kicker="1일차 · 2차시 · 11:00–12:00 (1h)">
+    <h1>AI 수업도구, 이렇게 생겼습니다</h1>
+    <p class="lead">완성본을 먼저 보고, 내 수업 문제로 첫 스케치를 그린다</p>
+    <div class="meta">
+      <span>사례 시연 · 트랙 A / 트랙 B</span>
+      <span>도구 제작 5단계</span>
+      <span>강사 김예진 / 팀모노리스</span>
+    </div>
+    <aside class="notes"><b>오프닝:</b> 앞 시간에 '우리는 AI를 만드는 사람이 된다'를 들었지만 '만든다'가 감이 안 올 수 있음. 이틀 뒤 손에 쥘 완성품이 실제로 어떻게 생겼는지 먼저 보여주는 시간. 결론: 대단한 기술이 아니라 '내 수업의 반복 작업을 대신하는 작은 도구'.</aside>
+  </section>
+
+  <!-- 2 오늘의 목표 -->
+  <section class="slide" data-kicker="오늘의 목표">
+    <h2>보고, 이해하고, 스케치한다</h2>
+    <ul>
+      <li>완성 도구 <strong>두 가지</strong>를 시연으로 눈에 담는다</li>
+      <li>도구를 만드는 <strong>제작 5단계</strong>를 이해한다</li>
+      <li>내 학교 수업 문제로 <strong>첫 스케치</strong>를 그린다 (입력→도움→결과)</li>
+    </ul>
+    <p class="lead">오늘 손댈 건 5단계 중 <strong>딱 1단계</strong>, 문제 정의 하나입니다.</p>
+    <aside class="notes"><b>강조:</b> "대단한 기술 아니라 작은 도구"로 진입장벽 낮추기. 오늘 과제는 문제 정의 하나뿐. 나머지는 이틀에 걸쳐 함께.</aside>
+  </section>
+
+  <!-- 3 섹션: 완성본 미리보기 -->
+  <section class="slide slide--section" data-kicker="완성본 미리보기">
+    <h1>이틀 뒤, 이걸 만듭니다</h1>
+    <p class="lead">지금부터 두 도구를 실제로 시연합니다 — 잘 관찰만 하세요</p>
+    <aside class="notes">시연은 "완성본은 이렇게 생겼다"를 보여주는 목적. 라이브 시연 실패 대비 녹화·스크린샷 백업 대기(최형관). 오류 시 즉시 전환.</aside>
+  </section>
+
+  <!-- 4 두 도구 나란히 -->
+  <section class="slide" data-kicker="시연 · 두 갈래">
+    <h2>서로 다른 두 도구</h2>
+    <div class="split">
+      <div><div class="panel a"><span class="badge a">트랙 A</span><h3>자동채점 + AI 튜터</h3><p>학생 코드를 자동으로 채점하고, 정답 대신 힌트·해설을 주는 도구</p></div></div>
+      <div><div class="panel b"><span class="badge b">트랙 B</span><h3>자료 기반 챗봇</h3><p>교사가 넣은 수업자료 범위 안에서만 답하는 챗봇</p></div></div>
+    </div>
+    <p class="lead">둘 다 예시일 뿐. 핵심은 <strong>'내 수업 문제'</strong>입니다.</p>
+    <aside class="notes">지금 트랙을 고를 필요 없음 — 내일 선택. 두 트랙은 형태 예시일 뿐, 본인 교과에 맞는 형태를 함께 찾아줌.</aside>
+  </section>
+
+  <!-- 5 트랙 A 시연 -->
+  <section class="slide" data-kicker="시연 · 트랙 A">
+    <h2>정답을 대신 써 주지 않는다</h2>
+    <div class="grid cols-3">
+      <div class="card"><div class="num">1</div><h3>코드 제출</h3><p>학생이 낸 파이썬 코드를 입력</p></div>
+      <div class="card"><div class="num">2</div><h3>자동 채점</h3><p>테스트케이스로 통과·실패 판정</p></div>
+      <div class="card card--accent"><div class="num">3</div><h3>힌트·해설</h3><p>정답 대신 "여길 다시 보세요"</p></div>
+    </div>
+    <p class="lead">정답을 주는 순간 학생은 <em>생각을 멈춥니다</em>.</p>
+    <aside class="notes">화면: Colab 데모. 학생 코드 넣으면 자동 채점 → 틀린 부분은 정답 대신 '이 부분 반복문 범위를 다시 보세요' 같은 힌트만. 오류 시 녹화 전환.</aside>
+  </section>
+
+  <!-- 6 트랙 B 시연 -->
+  <section class="slide" data-kicker="시연 · 트랙 B">
+    <h2>모르면 정직하게 "없어요"</h2>
+    <ul>
+      <li>자료 <strong>안</strong> 질문 → 내 자료에서 답을 찾아 준다</li>
+      <li>자료 <strong>밖</strong> 질문 → "제 수업자료엔 그 내용이 없어요"</li>
+    </ul>
+    <div class="callout"><span class="tag">정직한 AI</span><p>엉뚱한 답을 지어내지 않고 <strong>내가 준 범위 안에서만</strong> 답하게 만드는 것 — 이걸 내일 직접 만듭니다.</p></div>
+    <aside class="notes">화면: 코들 데모. '광합성 명반응이 뭐야?'는 자료에서 답, 자료 밖 질문엔 정직하게 거절. 교실에서 지어내기가 왜 위험한지 각인.</aside>
+  </section>
+
+  <!-- 7 정직한 AI 강조 -->
+  <section class="slide" data-kicker="두 도구의 공통 원칙">
+    <h2>'정직한 AI' 하나로 통합니다</h2>
+    <div class="split">
+      <div><div class="panel a"><span class="badge a">트랙 A</span><p>정답 코드를 통째로 주지 않고 <strong>힌트만</strong> 준다</p></div></div>
+      <div><div class="panel b"><span class="badge b">트랙 B</span><p>자료에 없으면 지어내지 않고 <strong>거절한다</strong></p></div></div>
+    </div>
+    <div class="callout warn"><span class="tag">왜 중요한가</span><p>교실에서 AI가 아는 척 지어내면 위험합니다. 범위를 지키는 정직함이 곧 <strong>신뢰</strong>입니다.</p></div>
+    <aside class="notes">이 원칙이 오늘 시연의 핵심 메시지. 두 도구가 겉모습은 달라도 같은 철학. 내일 만들 때 이 규칙을 못박게 됨.</aside>
+  </section>
+
+  <!-- 8 섹션: 제작 5단계 -->
+  <section class="slide slide--section" data-kicker="도구를 만드는 법">
+    <h1>제작은 다섯 걸음</h1>
+    <p class="lead">복잡해 보이지만, 오늘 여러분이 할 일은 1단계 하나뿐</p>
+    <aside class="notes">"어떻게 만드느냐, 딱 다섯 단계." 2~5단계는 이틀에 걸쳐 함께 진행하니 지금 부담 갖지 말 것.</aside>
+  </section>
+
+  <!-- 9 5단계 -->
+  <section class="slide" data-kicker="제작 5단계">
+    <h2>①만 오늘, 나머지는 이틀에 걸쳐</h2>
+    <div class="grid cols-3">
+      <div class="card card--accent"><div class="num">1</div><h3>문제 정의</h3><p>풀고 싶은 수업 문제 하나 — <strong>오늘 여기까지</strong></p></div>
+      <div class="card"><div class="num">2</div><h3>학습자 분석</h3><p>누가·어떤 수준으로 쓰나</p></div>
+      <div class="card"><div class="num">3</div><h3>기능 정의</h3><p>무엇을 해 주는 도구인가</p></div>
+      <div class="card"><div class="num">4</div><h3>자료·AI 결합</h3><p>내 자료와 AI를 붙인다</p></div>
+      <div class="card"><div class="num">5</div><h3>점검·반복</h3><p>써 보고 고친다</p></div>
+    </div>
+    <p class="lead">좋은 문제 하나만 고르면 <strong>절반은 끝</strong>입니다.</p>
+    <aside class="notes">①문제 정의 → ②학습자 분석 → ③기능 정의 → ④자료·AI 결합 → ⑤점검·반복. 5단계 설명은 짧게, 실습 15분 반드시 확보.</aside>
+  </section>
+
+  <!-- 10 섹션: 실습 -->
+  <section class="slide slide--section" data-kicker="지금부터 실습">
+    <h1>내 수업 문제, 스케치하기</h1>
+    <p class="lead">1차시에 적은 한 줄에 살을 붙일 시간</p>
+    <aside class="notes">1차시에서 적은 '수업 문제 1줄'을 구체적 스케치로 발전시킴. 코들 보드에 두 칸 사전 생성됨.</aside>
+  </section>
+
+  <!-- 11 실습 지시 -->
+  <section class="slide" data-kicker="실습 · 코들 보드">
+    <h3>코들 보드에 두 가지를 적습니다</h3>
+    <div class="callout"><span class="tag">1) 수업 문제</span><p>내 학교에서 <strong>풀고 싶은 수업 문제</strong>를 1~2문장으로.</p></div>
+    <div class="callout"><span class="tag">2) 첫 스케치</span><p>무엇을 <strong>입력</strong>하면 → AI가 어떤 <strong>도움</strong>을 주고 → 어떤 <strong>결과</strong>가 나오면 좋을지.</p></div>
+    <pre><span class="c"># 스케치 예시</span>
+<span class="k">입력</span>: 학생이 낸 2학년 함수 단원 오답
+<span class="k">도움</span>: 정답 대신 <span class="s">"어디를 다시 볼지"</span> 힌트
+<span class="k">결과</span>: 학생이 스스로 고쳐 다시 제출</pre>
+    <aside class="notes">순회하며 스케치 3칸(입력→도움→결과)이 빈 교사에게 빈칸 채우기로 최소 산출물 확보. 최형관 함께 순회.</aside>
+  </section>
+
+  <!-- 12 좋은 문제 고르기 -->
+  <section class="slide" data-kicker="좋은 문제 고르는 팁">
+    <h2>좁힐수록 좋은 도구가 나옵니다</h2>
+    <div class="grid cols-3">
+      <div class="card"><h3>한 학기</h3><p>일 년 통째 말고, 한 학기</p></div>
+      <div class="card"><h3>한 단원</h3><p>과목 전체 말고, 한 단원</p></div>
+      <div class="card"><h3>한 반</h3><p>모든 학년 말고, 한 반</p></div>
+    </div>
+    <div class="callout"><span class="tag">좋은 예</span><p>"2학년 함수 단원에서 학생이 오답을 내면 힌트를 주는 도구" — 이 정도면 완벽합니다.</p></div>
+    <aside class="notes">문제가 광범위·추상적이면 "한 학기·한 단원·한 반"으로 좁히도록 예시 제공. 거창하게 가지 말 것.</aside>
+  </section>
+
+  <!-- 13 산출물 확인 -->
+  <section class="slide" data-kicker="마무리 점검">
+    <h2>이 스케치가 내일의 설계도</h2>
+    <div class="callout"><span class="tag">기록</span><p>코들 보드에 <strong>수업 문제 1~2문장 + 첫 스케치(입력→도움→결과)</strong>가 올라갔는지 확인하세요.</p></div>
+    <p class="lead">코드는 아직 한 줄도 안 썼지만, 가장 어려운 <strong>'무엇을 만들 것인가'</strong>를 방금 정하셨습니다.</p>
+    <div class="tools"><span class="tool">코들 보드</span><span class="tool">아직 제작 아님</span><span class="tool">시연·스케치 단계</span></div>
+    <aside class="notes">업로드 점검 필수. 아직 본격 제작은 아니고 문제 정의·스케치까지. 다음 차시로 자연스럽게 연결.</aside>
+  </section>
+
+  <!-- 14 다음 차시 -->
+  <section class="slide center" data-kicker="다음 차시">
+    <h2>이 AI, Solar는 어떻게 답을 만들까?</h2>
+    <p class="lead">점심 후 3차시에서 <strong>Solar로 보는 LLM 원리</strong>를 다룹니다.<br>AI가 왜 가끔 틀리는지까지 눈으로 확인해야, 우리가 만들 도구를 믿고 쓸 수 있습니다.</p>
+    <aside class="notes">방금 정한 문제를 풀어 줄 AI가 어떻게 답을 만들고 왜 가끔 엉뚱한지 오후 첫 시간에 원리로. 맛있게 드시고 오후에.</aside>
+  </section>
+
+  <div class="hud"><span class="brand">2026 한국형-AI 교사개발자 양성 · 팀모노리스</span><span id="counter"></span></div>
+</div></div>
+<script src="assets/slides.js"></script>
+</body>
+</html>
