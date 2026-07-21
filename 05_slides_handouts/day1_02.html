@@ -44,8 +44,8 @@
   <section class="slide" data-kicker="시연 · 두 갈래">
     <h2>서로 다른 두 도구</h2>
     <div class="split">
-      <div><div class="panel a"><span class="badge a">트랙 A</span><h3>자동채점 + AI 튜터</h3><p>학생 코드를 자동으로 채점하고, 정답 대신 힌트·해설을 주는 도구</p></div></div>
-      <div><div class="panel b"><span class="badge b">트랙 B</span><h3>자료 기반 챗봇</h3><p>교사가 넣은 수업자료 범위 안에서만 답하는 챗봇</p></div></div>
+      <div><div class="panel a"><span class="badge a">트랙 A</span><h3>파이썬 자동 채점 + AI 튜터</h3><p>학생이 낸 파이썬 코드를 자동으로 채점하고, 틀리면 정답 대신 힌트를 주는 도구</p></div></div>
+      <div><div class="panel b"><span class="badge b">트랙 B</span><h3>주제 대화 튜터 (소크룸)</h3><p>정한 주제로 학생과 대화하며, 답 대신 질문을 던져 스스로 생각하게 이끄는 튜터</p></div></div>
     </div>
     <div class="callout"><span class="tag">샘플</span><p>지금 보시는 두 도구는 <strong>코들에 이미 있는 기능</strong>입니다. 이걸 샘플 삼아 <strong>내일 짓다에서 직접</strong> 만듭니다.</p></div>
     <p class="lead">둘 다 예시일 뿐. 핵심은 <strong>'내 수업 문제'</strong>입니다.</p>
@@ -57,33 +57,34 @@
     <h2>정답을 대신 써 주지 않는다</h2>
     <div class="grid cols-3">
       <div class="card"><div class="num">1</div><h3>코드 제출</h3><p>학생이 낸 파이썬 코드를 입력</p></div>
-      <div class="card"><div class="num">2</div><h3>자동 채점</h3><p>테스트케이스로 통과·실패 판정</p></div>
-      <div class="card card--accent"><div class="num">3</div><h3>힌트·해설</h3><p>정답 대신 "여길 다시 보세요"</p></div>
+      <div class="card"><div class="num">2</div><h3>자동 채점</h3><p>교사가 등록한 정답과 비교해 맞음·틀림 판정</p></div>
+      <div class="card card--accent"><div class="num">3</div><h3>정답 대신 힌트</h3><p>"어디가 왜 막혔는지"만 짚어 준다</p></div>
     </div>
-    <p class="lead">정답을 주는 순간 학생은 <em>생각을 멈춥니다</em>.</p>
-    <aside class="notes">화면: 코들 데모 — 코들의 파이썬 자동채점 기능. 학생 코드 넣으면 자동 채점 → 틀린 부분은 정답 대신 '이 부분 반복문 범위를 다시 보세요' 같은 힌트만. 오류 시 녹화 전환.</aside>
+    <p class="lead">교사 화면엔 누가 몇 번 시도했는지·손들기·막힌 학생이 <strong>실시간</strong>으로 보입니다.</p>
+    <aside class="notes">화면: 코들 데모 — 학생 코드를 교사가 등록한 정답·예시와 비교해 자동 채점. 문제·정답 예시는 교사가 넣거나 AI가 만들어 줌. 틀리면 정답 대신 '이 부분을 다시 보세요' 같은 힌트만, 원하면 '해결 방법'을 더 보여줌. 교사는 실시간으로 시도 횟수·손들기·막힌 학생을 확인, 수업 뒤 학생별 다시 보기. 오류 시 녹화 전환.</aside>
   </section>
 
   <!-- 6 트랙 B 시연 -->
   <section class="slide" data-kicker="시연 · 트랙 B">
-    <h2>모르면 정직하게 "없어요"</h2>
+    <h2>답 대신 질문을 던진다</h2>
     <ul>
-      <li>자료 <strong>안</strong> 질문 → 내 자료에서 답을 찾아 준다</li>
-      <li>자료 <strong>밖</strong> 질문 → "제 수업자료엔 그 내용이 없어요"</li>
+      <li>교사가 <strong>대화 주제와 난이도</strong>를 정한다 (예: '광합성')</li>
+      <li>AI 튜터가 답을 바로 주지 않고 <strong>질문을 던진다</strong> — "왜 그렇게 생각해요?", "근거는?"</li>
+      <li>학생은 대화하며 <strong>스스로 생각을 정리</strong>한다</li>
     </ul>
-    <div class="callout"><span class="tag">정직한 AI</span><p>엉뚱한 답을 지어내지 않고 <strong>내가 준 범위 안에서만</strong> 답하게 만드는 것 — 이걸 내일 직접 만듭니다.</p></div>
-    <aside class="notes">화면: 코들 데모. '광합성 명반응이 뭐야?'는 자료에서 답, 자료 밖 질문엔 정직하게 거절. 교실에서 지어내기가 왜 위험한지 각인.</aside>
+    <div class="callout"><span class="tag">대화 평가</span><p>학생 답변을 다섯 관점(개념 이해·예시 활용·논리 전개·자기 인식·능동적 탐구)으로 <strong>평가</strong>하고, 점수가 쌓이면 <strong>등급</strong>이 오릅니다.</p></div>
+    <aside class="notes">화면: 코들 데모 — 소크룸. 주제는 직접 쓰거나 PDF·링크로 넣으면 AI가 정리. AI가 한 번에 하나씩 유도 질문(왜·근거·다른 관점). 학생 답변을 다섯 관점으로 평가해 등급(입문→최고 단계)이 오름. 교사는 실시간 학생별 등급·점수·개별 대화를 보고, 수업 뒤 AI가 학생별 대화 요약. 오류 시 녹화 전환.</aside>
   </section>
 
-  <!-- 7 정직한 AI 강조 -->
+  <!-- 7 공통 원칙 강조 -->
   <section class="slide" data-kicker="두 도구의 공통 원칙">
-    <h2>'정직한 AI' 하나로 통합니다</h2>
+    <h2>'정답을 바로 주지 않는다'로 통합니다</h2>
     <div class="split">
       <div><div class="panel a"><span class="badge a">트랙 A</span><p>정답 코드를 통째로 주지 않고 <strong>힌트만</strong> 준다</p></div></div>
-      <div><div class="panel b"><span class="badge b">트랙 B</span><p>자료에 없으면 지어내지 않고 <strong>거절한다</strong></p></div></div>
+      <div><div class="panel b"><span class="badge b">트랙 B</span><p>답을 바로 주지 않고 <strong>질문을 던져</strong> 스스로 생각하게 한다</p></div></div>
     </div>
-    <div class="callout warn"><span class="tag">왜 중요한가</span><p>교실에서 AI가 아는 척 지어내면 위험합니다. 범위를 지키는 정직함이 곧 <strong>신뢰</strong>입니다.</p></div>
-    <aside class="notes">이 원칙이 오늘 시연의 핵심 메시지. 두 도구가 겉모습은 달라도 같은 철학. 내일 만들 때 이 규칙을 못박게 됨.</aside>
+    <div class="callout warn"><span class="tag">왜 중요한가</span><p>정답을 바로 주면 학생은 <strong>생각을 멈춥니다</strong>. 스스로 도달하게 돕는 것이 두 도구의 공통 철학입니다.</p></div>
+    <aside class="notes">이 원칙이 오늘 시연의 핵심 메시지. 두 도구가 겉모습은 달라도 같은 철학. 내일 만들 때 이 방식을 그대로 요청하게 됨.</aside>
   </section>
 
   <!-- 8 섹션: 제작 5단계 -->
